@@ -44,6 +44,8 @@ if __name__ == '__main__':
             truth = testdata.irow(i).values[0]  # 真实结果
             if predict_item == truth:  # 判断预测是否准确
                 hit.append(predict_item)
+        else:
+            preradio.append(-1)
     print(0)
     precision = len(hit) / len(preradio)
     print(precision)
