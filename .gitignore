@@ -88,3 +88,12 @@ ENV/
 # Rope project settings
 .ropeproject
 Kaggle入门：泰坦尼克号幸存者预测/Data/
+数据ID整理/.idea/
+Kaggle Beginner_Digit Recognizer/.idea/
+Kaggle Beginner_Digit Recognizer/data/
+TF-IDF/.idea/
+.idea/
+LSTM/Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras/aclImdb/
+*.csv
+LSTM/Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras/aclImdb_v1.tar.gz
+*.dat
