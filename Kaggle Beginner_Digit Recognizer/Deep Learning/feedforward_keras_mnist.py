@@ -52,7 +52,7 @@ def init_model():
     model.add(Activation('softmax'))
  
     rms = RMSprop()
-    model.compile(loss='categorical_crossentropy', optimizer=rms)
+    model.compile(loss='categorical_crossentropy', optimizer=rms,metrics=['accuracy'])
     print('Model compield in {0} seconds'.format(time.time() - start_time))
     return model
  
@@ -71,13 +71,11 @@ def run_network(data=None, model=None, epochs=20, batch=256):
         history = LossHistory()
  
         print('Training model...')
-        model.fit(X_train, y_train, nb_epoch=epochs, batch_size=batch,
-                  callbacks=[history], show_accuracy=True,
-                  validation_data=(X_test, y_test), verbose=2)
+        model.fit(X_train, y_train, epochs=epochs, batch_size=batch,
+                  callbacks=[history], validation_data=(X_test, y_test), verbose=2)
  
         print("Training duration : {0}".format(time.time() - start_time))
-        score = model.evaluate(X_test, y_test, batch_size=16,
-                               show_accuracy=True)
+        score = model.evaluate(X_test, y_test, batch_size=16,)
  
         print("Network's test score [loss, accuracy]: {0}".format(score))
         return model, history.losses
@@ -92,3 +90,12 @@ def plot_losses(losses):
     ax.plot(losses)
     ax.set_title('Loss per batch')
     fig.show()
+
+if __name__ == '__main__':
+    load_data()
+    init_model()
+    model,loss=run_network()
+    plot_losses(loss)
+    import gc;
+
+    gc.collect()
