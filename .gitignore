@@ -97,3 +97,5 @@ LSTM/Sequence Classification with LSTM Recurrent Neural Networks in Python with 
 *.csv
 LSTM/Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras/aclImdb_v1.tar.gz
 *.dat
+leetcode/.vs/
+leetcode/.vscode/
