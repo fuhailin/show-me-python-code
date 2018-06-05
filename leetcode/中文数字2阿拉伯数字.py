@@ -55,7 +55,7 @@ def convertChineseDigitsToArabic (chinese_digits, encoding="utf-8"):
     return result
 
 if __name__ == "__main__":
-    print(convertChineseDigitsToArabic(""))
+    print(convertChineseDigitsToArabic("哈十八"))
     test_map = {
     '三千五百二十三' : 3523,
     '七十五亿八百零七万九千二百零八':7508079208,
